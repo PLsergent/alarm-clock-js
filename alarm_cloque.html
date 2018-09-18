@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alarm Js</title>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width'>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src='main.js'></script>
+</head>
+<body>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<h1><div id="ClockDisplay"></div></h1>
+
+<div id="list-alarm" class="list-alarm"></div>
+<template>
+  <div id="skuu" class="skuu">
+   <input type="checkbox" id="activate" name="activate" value="activate">
+   <input type="number" id="hour" name="hour" min="0" max="23" value="08">
+   <input type="number" id="minute" name="minute" min="0" max="59" value="00">
+   <input type="text" id="titlealarm" name="titlealarm" value="Titre de l'alarme">
+   <input type="text" name="alarmsong" id="linkVie" value="URL YouTube">
+   <button class="btn" onclick=delLine()><i class="fas fa-eraser"></i></button>
+</div>
+</template>
+
+
+<button class="btn" onclick="addLine()"><i class="fas fa-plus"></i></button>
+</body>
