@@ -57,3 +57,41 @@ window.addEventListener("change", function checkChange() {
           }}else{alarm.style.background = 'initial';}}
   setTimeout(checkChange, 1000);
 });
+
+//     *feature*
+//popup qui affiche le temps restant avant l'alarme
+//problème!! : à chaque modification une pop up s'affiche pour chaque alarme checker
+window.addEventListener("change", function timer() {
+  let date = new Date();
+  var h = document.getElementById("hour").value;
+  var m = document.getElementById("minute").value;
+  var htimer = h - date.getHours();
+  var mtimer = m - date.getMinutes();
+	var alarm_list = document.querySelector('.list-alarm');
+    //for each alarm
+	for(let alarm of alarm_list.children) {
+    var checkbox = alarm.querySelector('input[type=checkbox]');
+    if (checkbox.checked){
+      if(h !== null && m !== null){
+            if(htimer >= 0){
+              if(mtimer >= 0){
+                window.alert("il reste : " + htimer + " h: " + mtimer + " minutes avant l'alarme"); //1
+              }else{
+                htimer = 0;
+                mtimer = mtimer + 60;
+                window.alert("il reste : " + htimer + " h: " + mtimer + " minutes avant l'alarme"); //2
+              }
+            }else{
+                if(mtimer >= 0){
+                  htimer = htimer + 24;
+                  window.alert("il reste : " + htimer + " h: " + mtimer + " minutes avant l'alarme"); //3
+                }else{
+                  htimer = htimer + 23;
+                  mtimer = mtimer + 60;
+                  window.alert("il reste : " + htimer + " h: " + mtimer + " minutes avant l'alarme"); //4
+                }
+            }
+      }
+    }
+  }
+});
